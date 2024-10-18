@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jewelry Box</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="jewelry-header">
+      <img
+        src="https://fontmeme.com/permalink/180719/67429e6afec53d21d64643101c43f029.png"
+        alt="toy-header"
+      />
+    </div>
+
+    <div class="container">
+      <form class="add-toy-form">
+        <h3>Submit new jewelry</h3>
+
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Jewelry name..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="image"
+          value=""
+          placeholder="Jewelry image URL..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Create Jewelry"
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+      Team jewelry <button id="new-jewel-btn">Add new jewelry</button>
+    </p>
+
+    <div id="jewelry-collection"></div>
+    <script type="text/javascript" src="src/index.js"></script>
+  </body>
+</html>
