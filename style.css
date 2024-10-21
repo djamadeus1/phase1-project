@@ -111,7 +111,35 @@
     border: 1px solid #ccc; /* Light grey border */
     transition: transform 0.3s; /* Adds a hover effect */
   }
+  .jewelry-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    width: 150px; /* Consistent with the image size */
+  }
   
+  .like-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ffb6c1; /* Light pink background */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .like-button:hover {
+    background-color: #ff69b4; /* Darker pink on hover */
+  }
+  
+  .like-count {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #333;
+  }
   #jewelry-box img:hover {
     transform: scale(1.05); /* Slightly enlarges on hover */
   }

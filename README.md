@@ -1,6 +1,28 @@
 steps
 
 Like button - to be added
+>> added pending troubleshooting on refresh / prevent defeault functionality 
+
+
+CURRENT VERSION PASSES LIKES PROPERLY, SHOWS ERROR IN BROWSER CONSOLE DUE TO "E"
+function listenForLikeClick(likeButton, jewelry, likeCountPar) {
+  likeButton.addEventListener('click', () => {
+    jewelry.likes++;
+    likeCountPar.textContent = `${jewelry.likes} Likes`;
+    e.preventDefault();
+
+    "Uncaught ReferenceError: e is not defined
+    at HTMLButtonElement.<anonymous> (index.js:37:5)"
+
+
+BELOW VERSION - UPDATED W/ E ADDED REFRESHES PAGE BUT LOGS CLICK CORRECTLY
+function listenForLikeClick(likeButton, jewelry, likeCountPar) {
+  likeButton.addEventListener('click', (e) => {
+    jewelry.likes++;
+    likeCountPar.textContent = `${jewelry.likes} Likes`;
+    e.preventDefault();
+
+
 Submit functionality - to be confirmed
 
 Click - complete

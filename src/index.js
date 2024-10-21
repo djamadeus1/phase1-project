@@ -1,36 +1,88 @@
 // index.js
 document.addEventListener("DOMContentLoaded", () => {
-// JEWELRY CLICK+DISPLAY IN FEATURE FUNCTION
+ 
 const handleClick = (jewelry) => {
   const jewelryDetail = document.getElementById('jewelry-detail');
   const detailImage = jewelryDetail.querySelector('.detail-image');
   const detailName = jewelryDetail.querySelector('.name');
   const detailJewelry = jewelryDetail.querySelector('.jewelry-name');
+  const detailLikes = document.getElementById('like-display');
+  const likeButton = document.getElementById('feature-like-button');
 
   detailImage.src = jewelry.image;
   detailName.textContent = jewelry.name;
-  detailJewelry.textContent = jewelry.brand; // Correct the property access
+  detailJewelry.textContent = jewelry.brand;
+  detailLikes.textContent = `${jewelry.likes} Likes`;
 
-  const detailLikes = document.getElementById('like-display');
-  // const detailComment = document.getElementById('comment-display');
+  // Add event listener to the like button for the featured jewelry
+  likeButton.onclick = () => {
+    jewelry.likes++;
+    detailLikes.textContent = `${jewelry.likes} Likes`;
 
-  detailLikes.textContent = jewelry.likes;
-  // detailComment.textContent = jewelry.comment;
+    // Persist the updated likes to the server
+    fetch(`http://localhost:3000/jewelry/${jewelry.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ likes: jewelry.likes })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(updatedJewelry => {
+      console.log(`Updated likes for ${updatedJewelry.name}: ${updatedJewelry.likes}`);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  };
 
   console.log(`${jewelry.name} ${jewelry.brand} clicked`);
-};    
-  // JEWELRY SUBMIT FUNCTION
+};
+
+function listenForLikeClick(likeButton, jewelry, likeCountPar) {
+  likeButton.addEventListener('click', () => {
+    jewelry.likes++;
+    likeCountPar.textContent = `${jewelry.likes} Likes`;
+
+    // Persist the updated likes to the server
+    fetch(`http://localhost:3000/jewelry/${jewelry.id}`, {
+      method: 'PATCH', // Use PATCH for updating
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ likes: jewelry.likes })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(updatedJewelry => {
+      console.log(`Updated likes for ${updatedJewelry.name}: ${updatedJewelry.likes}`);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  });
+}
+
+// JEWELRY SUBMIT FUNCTION
   const addSubmitListener = () => {
     const newJewelry = document.getElementById("new-jewelry");
-    newJewelry.addEventListener('submit', (e) => { // Correct the variable name
+    newJewelry.addEventListener('submit', (e) => { 
       e.preventDefault();
   
       const jewelryNew = {
         brand: document.getElementById('jewelry-brand').value,
-        name: document.getElementById('new-name').value, // Correct the ID reference
+        name: document.getElementById('new-name').value, 
         image: document.getElementById('new-image').value,
         likes: document.getElementById('new-likes').value,
-        // comment: document.getElementById('new-comment').value
       };
   
       fetch('http://localhost:3000/jewelry', {
@@ -59,11 +111,38 @@ const displayJewelry = () => {
 };
 
 const addJewelryToDOM = (jewelry) => {
-  const jewelryBox = document.getElementById('jewelry-box'); // Correct variable name
+  const jewelryBox = document.getElementById('jewelry-box');
+
+  // Create a container for each jewelry item
+  const jewelryItem = document.createElement('div');
+  jewelryItem.className = 'jewelry-item';
+
+  // Create and configure the image element
   const jewelryImg = document.createElement("img");
   jewelryImg.src = jewelry.image;
+  jewelryImg.className = 'jewelry-image';
   jewelryImg.addEventListener("click", () => handleClick(jewelry));
-  jewelryBox.appendChild(jewelryImg);
+
+  // Create the like button
+  const likeButton = document.createElement('button');
+  likeButton.className = 'like-button';
+  likeButton.textContent = 'Like';
+
+  // Create the like count paragraph
+  const likeCountPar = document.createElement('p');
+  likeCountPar.className = 'like-count';
+  likeCountPar.textContent = `${jewelry.likes} Likes`;
+
+  // Append elements to the jewelry item container
+  jewelryItem.appendChild(jewelryImg);
+  jewelryItem.appendChild(likeButton);
+  jewelryItem.appendChild(likeCountPar);
+
+  // Append the jewelry item container to the jewelry box
+  jewelryBox.appendChild(jewelryItem);
+
+  // Attach the like button event listener
+  listenForLikeClick(likeButton, jewelry, likeCountPar);
 };
 
 const main = () => {
