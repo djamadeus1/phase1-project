@@ -11,13 +11,13 @@ const handleClick = (jewelry) => {
   detailName.textContent = jewelry.name;
   detailJewelry.textContent = jewelry.brand; // Correct the property access
 
-  const detailRating = document.getElementById('rating-display');
-  const detailComment = document.getElementById('comment-display');
+  const detailLikes = document.getElementById('like-display');
+  // const detailComment = document.getElementById('comment-display');
 
-  detailRating.textContent = jewelry.rating;
-  detailComment.textContent = jewelry.comment;
+  detailLikes.textContent = jewelry.likes;
+  // detailComment.textContent = jewelry.comment;
 
-  console.log(`${jewelry.name} clicked`);
+  console.log(`${jewelry.name} ${jewelry.brand} clicked`);
 };    
   // JEWELRY SUBMIT FUNCTION
   const addSubmitListener = () => {
@@ -29,8 +29,8 @@ const handleClick = (jewelry) => {
         brand: document.getElementById('jewelry-brand').value,
         name: document.getElementById('new-name').value, // Correct the ID reference
         image: document.getElementById('new-image').value,
-        rating: document.getElementById('new-rating').value,
-        comment: document.getElementById('new-comment').value
+        likes: document.getElementById('new-likes').value,
+        // comment: document.getElementById('new-comment').value
       };
   
       fetch('http://localhost:3000/jewelry', {
@@ -72,4 +72,4 @@ const main = () => {
 }
 
 main ()
-};
+})
