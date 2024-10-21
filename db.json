@@ -2,50 +2,58 @@
     "jewelry": [
       {
         "id": 1,
-        "name": "Watch 1",
-        "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
+        "name": "Amber",
+        "brand": "Watch 1",
+        "image": "https://i.pinimg.com/474x/b3/5e/20/b35e209d844661da0b05ec2dc2a4c213.jpg",
         "likes": 0
       },
       {
         "id": 2,
-        "name": "Necklace 1",
-        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
+        "name": "Chelsea",
+        "brand": "Necklace 1",
+        "image": "https://i.pinimg.com/control/564x/84/f8/22/84f8225c0738a5113d081bfce9faf831.jpg",
         "likes": 0
       },
       {
         "id": 3,
-        "name": "Watch 2",
-        "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
+        "name": "Isar",
+        "brand": "Watch 2",
+        "image": "https://i.pinimg.com/564x/19/59/bf/1959bf5745df7fd033e73684e39d7551.jpg",
         "likes": 0
       },
       {
         "id": 4,
-        "name": "Necklace 2",
-        "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
+        "name": "Rani",
+        "brand": "Necklace 2",
+        "image": "https://i.pinimg.com/736x/57/58/03/5758032fd0a69faca9ebefa647666be7.jpg",
         "likes": 0
       },
       {
         "id": 5,
-        "name": "Earrings 1",
-        "image": "https://static.wikia.nocookie.net/disney/images/5/56/Profile_-_Rex.jpeg/revision/latest?cb=20190313050619",
+        "name": "Soho",
+        "brand": "Earrings 1",
+        "image": "https://i.pinimg.com/736x/d2/59/e0/d259e0222d0f53be3afa8a2ba16d0867.jpg",
         "likes": 0
       },
       {
         "id": 6,
-        "name": "Ring 1",
-        "image": "http://4.bp.blogspot.com/_OZHbJ8c71OM/Sog43CMFX2I/AAAAAAAADEs/0AKX0XslD4g/s400/bo.png",
+        "name": "Albert",
+        "brand": "Ring 1",
+        "image": "https://i.pinimg.com/736x/cf/64/36/cf6436c2a72563f430a61f05ae5892b4.jpg",
         "likes": 0
       },
       {
         "id": 7,
-        "name": "Ring 2",
-        "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
+        "name": "Tribeca",
+        "brand": "Ring 2",
+        "image": "https://i.pinimg.com/736x/0a/3f/a7/0a3fa799d6087d4159642797bb6bc829.jpg",
         "likes": 0
       },
       {
         "id": 8,
-        "name": "Ring 3",
-        "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
+        "name": "Brookyln",
+        "brand": "Ring 3",
+        "image": "https://i.pinimg.com/564x/ab/63/c6/ab63c664cceee15d1474a4dcdf81f9ae.jpg",
         "likes": 0
       }
     ]

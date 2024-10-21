@@ -1,51 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Jewelry Box</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div id="jewelry-header">
-      <img
-        src="https://fontmeme.com/permalink/180719/67429e6afec53d21d64643101c43f029.png"
-        alt="toy-header"
-      />
-    </div>
+<html>
 
-    <div class="container">
-      <form class="add-toy-form">
-        <h3>Submit new jewelry</h3>
+<head>
+  <meta charset="utf-8" />
+  <title>Jewelry Box</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script defer type="module" src="./src/index.js"></script>
+</head>
 
-        <input
-          type="text"
-          name="name"
-          value=""
-          placeholder="Jewelry name..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="text"
-          name="image"
-          value=""
-          placeholder="Jewelry image URL..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="submit"
-          name="submit"
-          value="Create Jewelry"
-          class="submit"
-        />
-      </form>
-    </div>
-    <p style="text-align:center">
-      Team jewelry <button id="new-jewel-btn">Add new jewelry</button>
-    </p>
+<body>
+  <header>
+    <h3>Jewelry Box</h3>
+  </header>
 
-    <div id="jewelry-collection"></div>
-    <script type="text/javascript" src="src/index.js"></script>
-  </body>
+  
+  <div id="jewelry-box">
+  
+  </div>
+
+
+  <div id="jewelry-detail">
+    <img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" />
+    <h2 class="name">Insert Name Here</h2>
+    <h3 class="jewelry-name">Insert Jewelry Here</h3>
+  </div>
+
+  <h3>Rating:</h3>
+  <p>
+    <span id='rating-display'>Insert rating here</span> / 10
+  </p>
+  <h3>Comment:</h3>
+  <p id='comment-display'>
+    Insert comment here
+  </p>
+
+
+  <form id="new-jewelry">
+    <h4>Add New Jewelry</h4>
+    <label for="new-name">Name: </label>
+    <input type="text" name="name" id="new-name" />
+    <label for="new-jewelry">Jewelry Name: </label>
+    <input type="text" name="jewelry-name" id="new-jewelry" />
+    <label for="new-image">Image: </label>
+    <input type="text" name="image" id="new-image" />
+    <label for="new-rating">Rating: </label>
+    <input type="number" name="rating" id="new-rating" />
+    <label for="new-comment">Comment: </label>
+    <textarea name="new-comment" name="new-comment" id="new-comment"></textarea>
+    <input type="submit" id='submit-button' value="Create" />
+  </form>
+
+  <form id="edit-jewelry">
+    <h4>Featured Jewelry</h4>
+    <label for="edit-rating">Rating: </label>
+    <input type="number" name="edit-rating" id="edit-rating" />
+    <label for="edit-comment">Comment: </label>
+    <textarea name="edit-comment" id="edit-comment"></textarea>
+    <input type="submit" value="Update" />
+  </form>
+
+</body>
+
 </html>
