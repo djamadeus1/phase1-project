@@ -5,21 +5,21 @@
       "name": "Amber",
       "brand": "Watch",
       "image": "https://i.pinimg.com/474x/b3/5e/20/b35e209d844661da0b05ec2dc2a4c213.jpg",
-      "likes": 14
+      "likes": 28
     },
     {
       "id": "2",
       "name": "Chelsea",
       "brand": "Necklace",
       "image": "https://i.pinimg.com/564x/84/f8/22/84f8225c0738a5113d081bfce9faf831.jpg",
-      "likes": 14
+      "likes": 24
     },
     {
       "id": "3",
       "name": "Isar",
       "brand": "Watch",
       "image": "https://i.pinimg.com/564x/19/59/bf/1959bf5745df7fd033e73684e39d7551.jpg",
-      "likes": 13
+      "likes": 14
     },
     {
       "id": "4",
@@ -33,7 +33,7 @@
       "name": "Soho",
       "brand": "Earrings",
       "image": "https://i.pinimg.com/736x/d2/59/e0/d259e0222d0f53be3afa8a2ba16d0867.jpg",
-      "likes": 14
+      "likes": 17
     },
     {
       "id": "6",
@@ -55,6 +55,13 @@
       "brand": "Ring",
       "image": "https://i.pinimg.com/564x/ab/63/c6/ab63c664cceee15d1474a4dcdf81f9ae.jpg",
       "likes": 6
+    },
+    {
+      "id": 521,
+      "name": "Derby",
+      "brand": "Watch",
+      "image": "https://thesolist.com/cdn/shop/files/shinola-the-derby-stainless-steel-ladies-quartz-watch-s0120242330-the-solist-shinola-968464.jpg?v=1720728580",
+      "likes": 0
     }
   ]
 }

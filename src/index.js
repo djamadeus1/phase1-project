@@ -15,9 +15,10 @@ const handleClick = (jewelry) => {
   detailLikes.textContent = `${jewelry.likes} Likes`;
 
   // Add event listener to the like button for the featured jewelry
-  likeButton.onclick = () => {
+  likeButton.onclick = (event) => {
     jewelry.likes++;
     detailLikes.textContent = `${jewelry.likes} Likes`;
+    event.preventDefault();
 
     // Persist the updated likes to the server
     fetch(`http://localhost:3000/jewelry/${jewelry.id}`, {
@@ -45,10 +46,11 @@ const handleClick = (jewelry) => {
 };
 
 function listenForLikeClick(likeButton, jewelry, likeCountPar) {
-  likeButton.addEventListener('click', () => {
+  likeButton.addEventListener('click', (event) => {
     jewelry.likes++;
     likeCountPar.textContent = `${jewelry.likes} Likes`;
-
+    event.preventDefault();
+    
     // Persist the updated likes to the server
     fetch(`http://localhost:3000/jewelry/${jewelry.id}`, {
       method: 'PATCH', // Use PATCH for updating
@@ -79,10 +81,11 @@ function listenForLikeClick(likeButton, jewelry, likeCountPar) {
       e.preventDefault();
   
       const jewelryNew = {
-        brand: document.getElementById('jewelry-brand').value,
-        name: document.getElementById('new-name').value, 
+        name: document.getElementById('new-name').value,
+        brand: document.getElementById('jewelry-type').value, 
         image: document.getElementById('new-image').value,
-        likes: document.getElementById('new-likes').value,
+        likes: 0, 
+        id: Math.floor(Math.random() * 10000) + 9
       };
   
       fetch('http://localhost:3000/jewelry', {
