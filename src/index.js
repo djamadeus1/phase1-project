@@ -49,6 +49,8 @@ function listenForLikeClick(likeButton, jewelry, likeCountPar) {
   likeButton.addEventListener('click', (event) => {
     jewelry.likes++;
     likeCountPar.textContent = `${jewelry.likes} Likes`;
+    likeButton.addEventListener('mouseover', () => {
+      console.log(`${jewelry.name} ${jewelry.brand} like mouseover`);
     event.preventDefault();
     
     // Persist the updated likes to the server
@@ -70,6 +72,7 @@ function listenForLikeClick(likeButton, jewelry, likeCountPar) {
     })
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
+    });
     });
   });
 }
