@@ -5,21 +5,21 @@
       "name": "Amber",
       "brand": "Watch",
       "image": "https://i.pinimg.com/474x/b3/5e/20/b35e209d844661da0b05ec2dc2a4c213.jpg",
-      "likes": 35
+      "likes": 45
     },
     {
       "id": "2",
       "name": "Chelsea",
       "brand": "Necklace",
       "image": "https://i.pinimg.com/564x/84/f8/22/84f8225c0738a5113d081bfce9faf831.jpg",
-      "likes": 33
+      "likes": 39
     },
     {
       "id": "3",
       "name": "Isar",
       "brand": "Watch",
       "image": "https://i.pinimg.com/564x/19/59/bf/1959bf5745df7fd033e73684e39d7551.jpg",
-      "likes": 21
+      "likes": 24
     },
     {
       "id": "4",
@@ -33,14 +33,14 @@
       "name": "Soho",
       "brand": "Earrings",
       "image": "https://i.pinimg.com/736x/d2/59/e0/d259e0222d0f53be3afa8a2ba16d0867.jpg",
-      "likes": 23
+      "likes": 24
     },
     {
       "id": "6",
       "name": "Albert",
       "brand": "Ring",
       "image": "https://i.pinimg.com/736x/cf/64/36/cf6436c2a72563f430a61f05ae5892b4.jpg",
-      "likes": 5
+      "likes": 6
     },
     {
       "id": "7",
