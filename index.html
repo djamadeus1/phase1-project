@@ -13,35 +13,33 @@
     <h3>Jewelry Box</h3>
   </header>
 
-  <div id="jewelry-detail">
-    <img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" />
-    <h2 class="name">Insert Name Here</h2>
-    <h3 class="jewelry-name">Insert Jewelry Here</h3>
-    <h3>Likes:</h3>
-    <p>
-      <span id='like-display'>Insert Likes here</span>
-      <button type="button" id="feature-like-button" class="like-button">Like</button>
-    </p>
+  <div id="content-wrapper">
+    <div id="jewelry-detail">
+      <img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" />
+      <h2 class="name">Insert Name Here</h2>
+      <h3 class="jewelry-name">Insert Jewelry Here</h3>
+      <h3>Likes:</h3>
+      <p>
+        <span id='like-display'>Insert Likes here</span>
+        <button type="button" id="feature-like-button" class="like-button">Like</button>
+      </p>
+    </div>
+
+    <form id="new-jewelry">
+      <h4>Add New Jewelry</h4>
+      <label for="new-name">Jewelry Name: </label>
+      <input type="text" name="name" id="new-name" />
+      <label for="new-jewelry">Jewelry Type: </label>
+      <input type="text" name="jewelry-type" id="jewelry-type" />
+      <label for="new-image">Image: </label>
+      <input type="text" name="image" id="new-image" />
+      <input type="submit" id='submit-button' value="Create" />
+    </form>
   </div>
 
   <div id="jewelry-box">
   
   </div>
-
-  <form id="new-jewelry">
-    <h4>Add New Jewelry</h4>
-    <label for="new-name">Jewelry Name: </label>
-    <input type="text" name="name" id="new-name" />
-    <label for="new-jewelry">Jewelry Type: </label>
-    <input type="text" name="jewelry-type" id="jewelry-type" />
-    <label for="new-image">Image: </label>
-    <input type="text" name="image" id="new-image" />
-    <!-- <label for="new-rating">Likes: </label>
-    <input type="number" name="rating" id="new-rating" /> -->
-    <!-- <label for="new-details">Details: </label> -->
-    <!-- <textarea name="new-details" name="new-details" id="new-details"></textarea> -->
-    <input type="submit" id='submit-button' value="Create" />
-  </form>
 
 </body>
 

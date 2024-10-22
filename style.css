@@ -1,145 +1,180 @@
+/* Base styles */
 * {
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    box-sizing: border-box;
-  }
-  
-  body {
-    padding: 1rem;
-    text-align: center;
-    background-color: #f5f5f5; /* Light beige background */
-    display: flex;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  text-align: center;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  padding: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem; /* Space buffer between header and content */
+  color: #f5f5dc;
+  border-radius: 12px;
+  background-color: #333333;
+  font-size: 1.5rem;
+}
+
+/* Container for jewelry detail and form */
+#content-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#jewelry-detail,
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  width: calc(50% - 1rem);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Allow scrolling if necessary */
+  height: auto;
+  min-height: 450px;
+  box-sizing: border-box;
+}
+
+.detail-image {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.name,
+.jewelry-name {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: auto;
+  max-width: 90%;
+  overflow: hidden; /* Ensure text does not overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  border: 1px solid #999;
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  width: 100%;
+}
+
+input[type="submit"] {
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #ffb6c1;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+input[type="submit"]:active {
+  background-color: #ff69b4;
+}
+
+form h4 {
+  width: 100%;
+  padding: 0.25rem;
+  margin: 0.5rem 0;
+  color: #fff;
+  border-radius: 6px;
+  background-color: #333333;
+}
+
+#jewelry-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  border-radius: 12px;
+  background-color: #ffb6c1;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+#jewelry-box img {
+  width: 140px;
+  height: 140px;
+  margin: 0.5rem;
+  cursor: pointer;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.jewelry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fafafa;
+  width: 150px;
+}
+
+.like-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ffb6c1;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.like-button:hover {
+  background-color: #ff69b4;
+}
+
+.like-count {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+#jewelry-box img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #content-wrapper {
     flex-direction: column;
-    justify-content: flex-start; /* Aligns items at the top */
     align-items: center;
-    min-height: 100vh; /* Ensures the body takes the full viewport height */
   }
-  
-  header {
-    padding: 0.5rem;
-    width: 100%;
-    color: #f5f5dc; /* Beige text color */
-    background-color: #333333; /* Dark grey background */
-  }
-  
-  #jewelry-detail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
-    padding: 2rem;
-    background-color: #fafafa; /* Off-white background */
-    border: 1px solid #ccc;
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Limits the maximum width */
-    margin: 1rem 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    min-height: 450px; /* Ensures enough height for all content */
-  }
-  
-  .detail-image {
-    max-width: 100%; /* Ensures image doesn't overflow */
-    height: auto; /* Maintains aspect ratio */
+
+  #jewelry-detail,
+  form {
+    width: 90%;
     margin-bottom: 1rem;
   }
-  
-  .name,
-  .jewelry-name {
-    padding: 0.25rem;
-    margin: 0.5rem 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    width: fit-content; /* Adjusts to content size */
-  }
-  
-  form {
-    margin: 1rem 0;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #fff; /* White background */
-    border: 1px solid #ccc;
-    padding: 1rem;
-  }
-  
-  input,
-  textarea {
-    font-size: 1rem;
-    border: 1px solid #999;
-    background-color: #f9f9f9; /* Light grey background */
-    padding: 0.5rem;
-    margin: 0.25rem 0;
-    width: 100%;
-  }
-  
-  input[type="submit"] {
-    color: #fff;
-    border: 1px solid #ccc;
-    background-color: #ffb6c1; /* Light pink background */
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  input[type="submit"]:active {
-    background-color: #ff69b4; /* Darker pink when active */
-  }
-  
-  form h4 {
-    width: 100%;
-    padding: 0.25rem;
-    margin: 0.5rem 0;
-    color: #fff;
-    background-color: #333333; /* Dark grey background */
-  }
-  
-  #jewelry-box {
-    display: flex;
-    flex-wrap: wrap; /* Allows for wrapping of images */
-    justify-content: center; /* Centers images horizontally */
-    margin-top: auto; /* Pushes images to the bottom */
-    max-width: 100%; /* Ensures it doesn't overflow the viewport */
-    background-color: #ffb6c1; /* Light pink background for the box */
-    padding: 1rem;
-  }
-  
-  #jewelry-box img {
-    width: 150px; /* Ensures consistent width */
-    height: 150px; /* Ensures consistent height */
-    margin: 0.5rem; /* Adds space between images */
-    cursor: pointer;
-    object-fit: cover; /* Ensures images maintain aspect ratio and fill the area */
-    border: 1px solid #ccc; /* Light grey border */
-    transition: transform 0.3s; /* Adds a hover effect */
-  }
-  .jewelry-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #fafafa;
-    width: 150px; /* Consistent with the image size */
-  }
-  
-  .like-button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #ffb6c1; /* Light pink background */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .like-button:hover {
-    background-color: #ff69b4; /* Darker pink on hover */
-  }
-  
-  .like-count {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: #333;
-  }
-  #jewelry-box img:hover {
-    transform: scale(1.05); /* Slightly enlarges on hover */
-  }
+}

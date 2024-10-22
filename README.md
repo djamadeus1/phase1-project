@@ -9,6 +9,20 @@ Submit button - added, validated
 
 
 milestones
-- 10/21 basic functionality aligned to Ramen Rater, but for jewelry
-- 10/22 add on builds ('most liked' video functionality, mouseover, and custom CSS aesthetic begin to be implemented)
+- 10/21 basic functionality aligned to Ramen Rater, but for jewelry COMPLETE
+
+
+- 10/22 add on builds ('most liked' video functionality, mouseover, and custom CSS 
+
+- unlike feature capability PENDING
+- team member sections PENDING
+
+- video capability or integration, maybe video section
+>> jewlery gif integration on sidebar?
+
+- CSS/HTML updates to feature jewelry section; highlighting over the name/article
+>> font?
+>> mouseover..hover..rounding?
+
+aesthetic begin to be implemented)
 - 10/23 debugging, fine tuning, asking emily feedback
