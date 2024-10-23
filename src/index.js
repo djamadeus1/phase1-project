@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
         brand: document.getElementById('jewelry-type').value, 
         image: document.getElementById('new-image').value,
         likes: 0, 
-        id: Math.floor(Math.random() * 10000) + 9
       };
 
       fetch('http://localhost:3000/jewelry', {
@@ -85,8 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(newJewelry => {
         addJewelryToDOM(newJewelry);
       });
+      newJewelry.reset ()
     });
   };
+
+// most liked function
+  function displayMostLikedJewelry(jewelryData) {
+  const mostLikedJewelry = jewelryData.reduce((max, jewelry) => {
+    return jewelry.likes > max.likes ? jewelry : max;
+  }, jewelryData[0]);
+
+  handleClick(mostLikedJewelry);
+}
 
   const displayJewelry = () => {
     fetch(`http://localhost:3000/jewelry`)
@@ -95,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const jewelryBox = document.getElementById('jewelry-box');
       jewelryData.forEach(jewelry => {
         addJewelryToDOM(jewelry);
+        displayMostLikedJewelry(jewelryData);
       });
     });
   };
